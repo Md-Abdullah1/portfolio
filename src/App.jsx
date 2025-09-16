@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  Phone, 
-  ExternalLink, 
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Phone,
+  ExternalLink,
   Download,
   Code,
   Palette,
@@ -15,18 +15,24 @@ import {
   Target,
   ChevronDown,
   Menu,
-  X
-} from 'lucide-react';
-import { Button } from './components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
-import { Badge } from './components/ui/badge';
-import './App.css';
+  X,
+} from "lucide-react";
+import { Button } from "./components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./components/ui/card";
+import { Badge } from "./components/ui/badge";
+import "./App.css";
 
 // import threeDElement from './assets/3d_element.png';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState("hero");
 
   // Scroll animation observer
   useEffect(() => {
@@ -34,7 +40,7 @@ function App() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add("visible");
             setActiveSection(entry.target.id);
           }
         });
@@ -42,81 +48,129 @@ function App() {
       { threshold: 0.1 }
     );
 
-    const sections = document.querySelectorAll('.section-fade-in');
+    const sections = document.querySelectorAll(".section-fade-in");
     sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect();
   }, []);
 
   const skills = {
-    programming: ['C', 'C++', 'Python', 'SQL', 'JavaScript', 'TypeScript', 'JAVA'],
-    frontend: ['React.js', 'Redux Toolkit', 'Next.js', 'React Native', 'HTML5', 'CSS3', 'Tailwind', 'Bootstrap', 'Ant Design', 'GSAP'],
-    backend: ['Node.js', 'Express.js', 'MongoDB', 'MySQL', 'PostgreSQL', 'GraphQL', 'JWT', 'JSON'],
-    tools: ['Git/GitHub', 'API Integration', 'Cursor', 'Prompt Engineering'],
-    strengths: ['Problem-Solving', 'Quick Learner', 'Team Player', 'Time Management']
+    programming: [
+      "C",
+      "C++",
+      "Python",
+      "SQL",
+      "JavaScript",
+      "TypeScript",
+      "JAVA",
+    ],
+    frontend: [
+      "React.js",
+      "Redux Toolkit",
+      "Next.js",
+      "React Native",
+      "HTML5",
+      "CSS3",
+      "Tailwind",
+      "Bootstrap",
+      "Ant Design",
+      "GSAP",
+    ],
+    backend: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "MySQL",
+      "PostgreSQL",
+      "GraphQL",
+      "JWT",
+      "JSON",
+    ],
+    tools: ["Git/GitHub", "API Integration", "Cursor", "Prompt Engineering"],
+    strengths: [
+      "Problem-Solving",
+      "Quick Learner",
+      "Team Player",
+      "Time Management",
+    ],
   };
 
   const projects = [
     {
-      title: 'BUILDER SUITE',
-      description: 'Driving the Builder Project by developing scalable, reusable components and managing complex state for seamless feature integration. Optimized API interactions, enhancing data flow and user engagement by 40%.',
-      tech: ['React.js', 'GSAP', 'SCSS', 'Lodash'],
-      impact: '40% increase in user engagement'
+      title: "BUILDER SUITE",
+      description:
+        "Driving the Builder Project by developing scalable, reusable components and managing complex state for seamless feature integration. Optimized API interactions, enhancing data flow and user engagement by 40%.",
+      tech: ["React.js", "GSAP", "SCSS", "Lodash"],
+      impact: "40% increase in user engagement",
     },
     {
-      title: 'TASKIFY',
-      description: 'Developed a Task Management System using Next.js and MERN stack, featuring secure role-based authentication, real-time updates, and optimized MongoDB queries.',
-      tech: ['Next.js', 'MongoDB', 'Node.js', 'Express.js'],
-      impact: '40% improvement in task efficiency'
+      title: "TASKIFY",
+      description:
+        "Developed a Task Management System using Next.js and MERN stack, featuring secure role-based authentication, real-time updates, and optimized MongoDB queries.",
+      tech: ["Next.js", "MongoDB", "Node.js", "Express.js"],
+      impact: "40% improvement in task efficiency",
     },
     {
-      title: 'HRMS',
-      description: 'Contributed to an HRMS application, improving employee tracking and management efficiency through optimized workflows and automation.',
-      tech: ['React.js', 'Node.js', 'MongoDB'],
-      impact: '30% efficiency improvement'
+      title: "HRMS",
+      description:
+        "Contributed to an HRMS application, improving employee tracking and management efficiency through optimized workflows and automation.",
+      tech: ["React.js", "Node.js", "MongoDB"],
+      impact: "30% efficiency improvement",
     },
     {
-      title: 'POS APPLICATION',
-      description: 'Developed a POS application using React Native, improving transaction efficiency and enhancing customer engagement through optimized UI/UX.',
-      tech: ['React Native', 'API Integration'],
-      impact: '30% transaction efficiency boost'
-    }
+      title: "POS APPLICATION",
+      description:
+        "Developed a POS application using React Native, improving transaction efficiency and enhancing customer engagement through optimized UI/UX.",
+      tech: ["React Native", "API Integration"],
+      impact: "30% transaction efficiency boost",
+    },
   ];
 
   const experience = [
     {
-      company: 'Huemn Interactive Pvt.Ltd',
-      position: 'Front End Developer',
-      period: 'August 2024 - Present',
-      description: 'Developed a No-Code website and proposal builder, enhancing user efficiency by 40%. Implemented Drag-and-Drop functionality with React.js, integrated GSAP animations for a 30% boost in engagement.',
-      achievements: ['40% user efficiency increase', '30% engagement boost', '20% load time reduction', '25% content creation speed improvement']
+      company: "Huemn Interactive Pvt.Ltd",
+      position: "Front End Developer",
+      period: "August 2024 - Present",
+      description:
+        "Developed a No-Code website and proposal builder, enhancing user efficiency by 40%. Implemented Drag-and-Drop functionality with React.js, integrated GSAP animations for a 30% boost in engagement.",
+      achievements: [
+        "40% user efficiency increase",
+        "30% engagement boost",
+        "20% load time reduction",
+        "25% content creation speed improvement",
+      ],
     },
     {
-      company: 'PTR Technologies',
-      position: 'Front End Developer',
-      period: 'May 2023 - July 2024',
-      description: 'Engineered and optimized HRMS & POS applications, increasing system efficiency by 30% and automating workflows, reducing manual effort by 40%.',
-      achievements: ['30% system efficiency increase', '40% manual effort reduction', '25% API response time improvement']
-    }
+      company: "PTR Technologies",
+      position: "Front End Developer",
+      period: "May 2023 - July 2024",
+      description:
+        "Engineered and optimized HRMS & POS applications, increasing system efficiency by 30% and automating workflows, reducing manual effort by 40%.",
+      achievements: [
+        "30% system efficiency increase",
+        "40% manual effort reduction",
+        "25% API response time improvement",
+      ],
+    },
   ];
 
   const education = [
     {
-      institution: 'Jawaharlal Nehru Technological University Hyderabad',
-      degree: 'Bachelor of Technology in CSE',
-      period: '2021 - 2024',
-      grade: '74%'
+      institution: "Jawaharlal Nehru Technological University Hyderabad",
+      degree: "Bachelor of Technology in CSE",
+      period: "2021 - 2024",
+      grade: "74%",
     },
     {
-      institution: 'State Board of Technical Education and Training',
-      degree: 'Diploma in Computer Engineering',
-      period: '2018 - 2021',
-      grade: '76%'
-    }
+      institution: "State Board of Technical Education and Training",
+      degree: "Diploma in Computer Engineering",
+      period: "2018 - 2021",
+      grade: "76%",
+    },
   ];
 
   const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     setIsMenuOpen(false);
   };
 
@@ -125,22 +179,29 @@ function App() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold font-['Orbitron'] text-gradient"
           >
             MA
           </motion.div>
-          
+
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            {['About', 'Skills', 'Projects', 'Experience', 'Education', 'Contact'].map((item) => (
+            {[
+              "About",
+              "Skills",
+              "Projects",
+              "Experience",
+              "Education",
+              "Contact",
+            ].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
                 className={`hover:text-primary transition-colors ${
-                  activeSection === item.toLowerCase() ? 'text-primary' : ''
+                  activeSection === item.toLowerCase() ? "text-primary" : ""
                 }`}
               >
                 {item}
@@ -162,12 +223,19 @@ function App() {
           {isMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
+              animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden bg-background/95 backdrop-blur-md border-t border-border"
             >
               <div className="container mx-auto px-4 py-4 space-y-4">
-                {['About', 'Skills', 'Projects', 'Experience', 'Education', 'Contact'].map((item) => (
+                {[
+                  "About",
+                  "Skills",
+                  "Projects",
+                  "Experience",
+                  "Education",
+                  "Contact",
+                ].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase())}
@@ -183,9 +251,12 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center hero-bg relative overflow-hidden">
+      <section
+        id="hero"
+        className="min-h-screen flex items-center justify-center hero-bg relative overflow-hidden"
+      >
         <div className="absolute inset-0 bg-background/70"></div>
-        
+
         {/* Floating 3D Element
         <div className="absolute top-20 right-20 w-32 h-32 floating-animation opacity-30">
           <img src={threeDElement} alt="3D Element" className="w-full h-full rotating-3d" />
@@ -216,7 +287,8 @@ function App() {
               transition={{ delay: 2, duration: 1 }}
               className="text-xl md:text-2xl mb-12 text-white max-w-3xl mx-auto"
             >
-              Crafting immersive digital experiences with React.js, GSAP animations, and cutting-edge web technologies
+              Crafting immersive digital experiences with React.js, GSAP
+              animations, and cutting-edge web technologies
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -224,18 +296,18 @@ function App() {
               transition={{ delay: 2.5, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="glow-effect pulse-glow font-['Orbitron']"
-                onClick={() => scrollToSection('projects')}
+                onClick={() => scrollToSection("projects")}
               >
                 View My Work
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg" 
+              <Button
+                variant="outline"
+                size="lg"
                 className="neon-border font-['Orbitron']"
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToSection("contact")}
               >
                 Get In Touch
               </Button>
@@ -278,13 +350,18 @@ function App() {
               <Card className="neon-border bg-card/50 backdrop-blur-sm">
                 <CardContent className="p-8">
                   <p className="text-lg leading-relaxed mb-6">
-                    I'm a passionate Frontend Developer specializing in the MERN stack with expertise in React.js and animation technologies. 
-                    With a strong foundation in computer science and hands-on experience in building scalable web applications, 
-                    I bring ideas to life through code and creativity.
+                    I'm a passionate Frontend Developer specializing in the MERN
+                    stack with expertise in React.js and animation technologies.
+                    With a strong foundation in computer science and hands-on
+                    experience in building scalable web applications, I bring
+                    ideas to life through code and creativity.
                   </p>
                   <p className="text-lg leading-relaxed mb-6">
-                    My journey in web development has been driven by a love for creating engaging user experiences and solving complex problems. 
-                    I specialize in building responsive, animated, and performance-optimized applications that not only look great but also deliver exceptional functionality.
+                    My journey in web development has been driven by a love for
+                    creating engaging user experiences and solving complex
+                    problems. I specialize in building responsive, animated, and
+                    performance-optimized applications that not only look great
+                    but also deliver exceptional functionality.
                   </p>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="flex items-center gap-2">
@@ -320,7 +397,10 @@ function App() {
                     <Target className="w-6 h-6 text-primary" />
                     <h3 className="text-xl font-semibold">Problem Solver</h3>
                   </div>
-                  <p>I thrive on tackling complex challenges and finding innovative solutions that drive results.</p>
+                  <p>
+                    I thrive on tackling complex challenges and finding
+                    innovative solutions that drive results.
+                  </p>
                 </CardContent>
               </Card>
 
@@ -330,7 +410,10 @@ function App() {
                     <Clock className="w-6 h-6 text-primary" />
                     <h3 className="text-xl font-semibold">Quick Learner</h3>
                   </div>
-                  <p>Constantly adapting to new technologies and frameworks to stay ahead in the ever-evolving tech landscape.</p>
+                  <p>
+                    Constantly adapting to new technologies and frameworks to
+                    stay ahead in the ever-evolving tech landscape.
+                  </p>
                 </CardContent>
               </Card>
 
@@ -340,7 +423,10 @@ function App() {
                     <Users className="w-6 h-6 text-primary" />
                     <h3 className="text-xl font-semibold">Collaborative</h3>
                   </div>
-                  <p>Experienced in working with cross-functional teams to deliver high-quality, performance-driven solutions.</p>
+                  <p>
+                    Experienced in working with cross-functional teams to
+                    deliver high-quality, performance-driven solutions.
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -372,7 +458,7 @@ function App() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <h3 className="text-2xl font-bold font-['Orbitron'] mb-6 capitalize text-primary">
-                  {category.replace(/([A-Z])/g, ' $1').trim()}
+                  {category.replace(/([A-Z])/g, " $1").trim()}
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                   {skillList.map((skill, skillIndex) => (
@@ -383,8 +469,8 @@ function App() {
                       transition={{ duration: 0.4, delay: skillIndex * 0.05 }}
                       whileHover={{ scale: 1.05 }}
                     >
-                      <Badge 
-                        variant="secondary" 
+                      <Badge
+                        variant="secondary"
                         className="skill-card w-full justify-center py-3 text-sm font-medium"
                       >
                         {skill}
@@ -436,7 +522,11 @@ function App() {
                     </p>
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.tech.map((tech) => (
-                        <Badge key={tech} variant="outline" className="neon-border">
+                        <Badge
+                          key={tech}
+                          variant="outline"
+                          className="neon-border"
+                        >
                           {tech}
                         </Badge>
                       ))}
@@ -540,7 +630,9 @@ function App() {
                   </CardHeader>
                   <CardContent>
                     <div className="flex justify-between items-center">
-                      <span className="text-muted-foreground">{edu.period}</span>
+                      <span className="text-muted-foreground">
+                        {edu.period}
+                      </span>
                       <Badge variant="outline" className="neon-border">
                         {edu.grade}
                       </Badge>
@@ -567,7 +659,8 @@ function App() {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-8"></div>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ready to bring your ideas to life? Let's collaborate and create something amazing together.
+              Ready to bring your ideas to life? Let's collaborate and create
+              something amazing together.
             </p>
           </motion.div>
 
@@ -628,8 +721,10 @@ function App() {
                       Let's Connect
                     </h3>
                     <p className="text-muted-foreground mb-6 leading-relaxed">
-                      I'm always excited to discuss new opportunities, innovative projects, and potential collaborations. 
-                      Whether you have a project in mind or just want to connect, feel free to reach out!
+                      I'm always excited to discuss new opportunities,
+                      innovative projects, and potential collaborations. Whether
+                      you have a project in mind or just want to connect, feel
+                      free to reach out!
                     </p>
                     <div className="space-y-4">
                       <div className="flex items-center gap-3">
