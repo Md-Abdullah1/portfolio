@@ -1,13 +1,14 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
-const Header = ({scrollToSection}) => {
+const Header = ({ scrollToSection, activeSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
-  const desktopNavLinks = useMemo(() => {
-    ["About", "Skills", "Projects", "Experience", "Education", "Contact"];
-  }, []);
+
+  const desktopNavLinks = useMemo(
+    () => ["About", "Skills", "Projects", "Experience", "Education", "Contact"],
+    []
+  );
   return (
     <div>
       {" "}
@@ -26,7 +27,10 @@ const Header = ({scrollToSection}) => {
             {desktopNavLinks.map((item) => (
               <button
                 key={item}
-                onClick={() => scrollToSection(item.toLowerCase())}
+                onClick={() => {
+                  scrollToSection(item.toLowerCase());
+                  setIsMenuOpen(false);
+                }}
                 className={`hover:text-primary transition-colors ${
                   activeSection === item.toLowerCase() ? "text-primary" : ""
                 }`}
@@ -62,10 +66,13 @@ const Header = ({scrollToSection}) => {
                   "Experience",
                   "Education",
                   "Contact",
-                ].map((item) => (
+                ]?.map((item) => (
                   <button
                     key={item}
-                    onClick={() => scrollToSection(item.toLowerCase())}
+                    onClick={() => {
+                      scrollToSection(item.toLowerCase());
+                      setIsMenuOpen(false);
+                    }}
                     className="block w-full text-left hover:text-primary transition-colors"
                   >
                     {item}

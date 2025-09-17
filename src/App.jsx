@@ -14,8 +14,6 @@ import {
   Clock,
   Target,
   ChevronDown,
-  Menu,
-  X,
 } from "lucide-react";
 import { Button } from "./components/ui/button";
 import {
@@ -27,11 +25,11 @@ import {
 } from "./components/ui/card";
 import { Badge } from "./components/ui/badge";
 import "./App.css";
+import Header from "./components/layouts/header";
 
 // import threeDElement from './assets/3d_element.png';
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
 
   // Scroll animation observer
@@ -171,84 +169,13 @@ function App() {
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
-    setIsMenuOpen(false);
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground font-['Roboto']">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold font-['Orbitron'] text-gradient"
-          >
-            MA
-          </motion.div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            {[
-              "About",
-              "Skills",
-              "Projects",
-              "Experience",
-              "Education",
-              "Contact",
-            ].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item.toLowerCase())}
-                className={`hover:text-primary transition-colors ${
-                  activeSection === item.toLowerCase() ? "text-primary" : ""
-                }`}
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X /> : <Menu />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-background/95 backdrop-blur-md border-t border-border"
-            >
-              <div className="container mx-auto px-4 py-4 space-y-4">
-                {[
-                  "About",
-                  "Skills",
-                  "Projects",
-                  "Experience",
-                  "Education",
-                  "Contact",
-                ].map((item) => (
-                  <button
-                    key={item}
-                    onClick={() => scrollToSection(item.toLowerCase())}
-                    className="block w-full text-left hover:text-primary transition-colors"
-                  >
-                    {item}
-                  </button>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
+      <Header activeSection={activeSection} scrollToSection={scrollToSection} />
 
       {/* Hero Section */}
       <section
