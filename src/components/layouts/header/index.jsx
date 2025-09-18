@@ -31,7 +31,7 @@ const Header = ({ scrollToSection, activeSection }) => {
                   scrollToSection(item.toLowerCase());
                   setIsMenuOpen(false);
                 }}
-                className={`hover:text-primary transition-colors ${
+                className={`hover:text-primary transition-colors cursor-pointer ${
                   activeSection === item.toLowerCase() ? "text-primary" : ""
                 }`}
               >
@@ -42,7 +42,7 @@ const Header = ({ scrollToSection, activeSection }) => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="md:hidden cursor-pointer"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X /> : <Menu />}
@@ -73,7 +73,7 @@ const Header = ({ scrollToSection, activeSection }) => {
                       scrollToSection(item.toLowerCase());
                       setIsMenuOpen(false);
                     }}
-                    className="block w-full text-left hover:text-primary transition-colors"
+                    className="block w-full text-left hover:text-primary cursor-pointer transition-colors"
                   >
                     {item}
                   </button>
