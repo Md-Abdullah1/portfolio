@@ -1,15 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone, Download } from "lucide-react";
-import { Button } from "./components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "./components/ui/card";
-import { Badge } from "./components/ui/badge";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/layouts/header";
 import Hero from "./components/layouts/hero";
@@ -19,8 +8,7 @@ import Projects from "./components/layouts/projects";
 import Experience from "./components/layouts/experience";
 import Education from "./components/layouts/education";
 import Contact from "./components/layouts/contact";
-
-// import threeDElement from './assets/3d_element.png';
+import Footer from "./components/layouts/footer";
 
 function App() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -52,7 +40,6 @@ function App() {
   return (
     <div className="min-h-screen bg-background text-foreground font-['Roboto']">
       {/* Header */}
-
       <Header activeSection={activeSection} scrollToSection={scrollToSection} />
 
       {/* Hero Section */}
@@ -77,13 +64,7 @@ function App() {
       <Contact />
 
       {/* Footer */}
-      <footer className="py-8 border-t border-border">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-muted-foreground">
-            © 2024 Md Abdullah. Crafted with ❤️ and lots of ☕
-          </p>
-        </div>
-      </footer>
+      <Footer scrollToSection={scrollToSection} />
     </div>
   );
 }

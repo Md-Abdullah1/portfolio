@@ -82,11 +82,16 @@ const Contact = () => {
               <div className="flex gap-4">
                 <Button className="flex-1 glow-effect">
                   <Mail className="w-4 h-4 mr-2" />
-                  Send Email
+                  <a href="mailto:ahilabdullah111@gmail.com">Send Email</a>
                 </Button>
                 <Button variant="outline" className="flex-1 neon-border">
                   <Download className="w-4 h-4 mr-2" />
-                  Download CV
+                  <a
+                    href="/public/Md-Abdulah-RESUME.pdf"
+                    download="Md_Abdullah_Resume.pdf"
+                  >
+                    Download CV
+                  </a>
                 </Button>
               </div>
             </motion.div>

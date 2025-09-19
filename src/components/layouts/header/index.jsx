@@ -17,9 +17,9 @@ const Header = ({ scrollToSection, activeSection }) => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold font-['Orbitron'] text-gradient"
+            className="text-2xl font-bold font-['Orbitron'] text-gradient cursor-pointer"
           >
-            MA
+            <button className="cursor-pointer" onClick={() => scrollToSection("hero")}>MA</button>
           </motion.div>
 
           {/* Desktop Menu */}
