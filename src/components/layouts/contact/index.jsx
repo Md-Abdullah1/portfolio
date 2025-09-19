@@ -87,7 +87,7 @@ const Contact = () => {
                 <Button variant="outline" className="flex-1 neon-border">
                   <Download className="w-4 h-4 mr-2" />
                   <a
-                    href="/public/Md-Abdulah-RESUME.pdf"
+                    href="/Md-Abdulah-RESUME.pdf"
                     download="Md_Abdullah_Resume.pdf"
                   >
                     Download CV
