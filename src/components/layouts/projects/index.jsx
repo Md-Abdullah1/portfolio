@@ -20,6 +20,7 @@ const Projects = () => {
           "Driving the Builder Project by developing scalable, reusable components and managing complex state for seamless feature integration. Optimized API interactions, enhancing data flow and user engagement by 40%.",
         tech: ["React.js", "GSAP", "SCSS", "Lodash"],
         impact: "40% increase in user engagement",
+        link: "https://www.ve.ai",
       },
       {
         title: "TASKIFY",
@@ -27,6 +28,7 @@ const Projects = () => {
           "Developed a Task Management System using Next.js and MERN stack, featuring secure role-based authentication, real-time updates, and optimized MongoDB queries.",
         tech: ["Next.js", "MongoDB", "Node.js", "Express.js"],
         impact: "40% improvement in task efficiency",
+        link: "https://github.com/Md-Abdullah1/taskify",
       },
       {
         title: "HRMS",
@@ -34,6 +36,7 @@ const Projects = () => {
           "Contributed to an HRMS application, improving employee tracking and management efficiency through optimized workflows and automation.",
         tech: ["React.js", "Node.js", "MongoDB"],
         impact: "30% efficiency improvement",
+        link: "https://github.com/Md-Abdullah1/appkube-hrms-ui",
       },
       {
         title: "POS APPLICATION",
@@ -41,6 +44,7 @@ const Projects = () => {
           "Developed a POS application using React Native, improving transaction efficiency and enhancing customer engagement through optimized UI/UX.",
         tech: ["React Native", "API Integration"],
         impact: "30% transaction efficiency boost",
+        link: "https://github.com/Md-Abdullah1/appkube-pos-app",
       },
     ],
     []
@@ -92,10 +96,20 @@ const Projects = () => {
                       </Badge>
                     ))}
                   </div>
-                  <Button variant="outline" className="w-full neon-border">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Project
-                  </Button>
+                  <a
+                    href={project?.link}
+                    target="_blank"
+                    rel="noopener noreferer"
+                    className="w-full"
+                  >
+                    <Button
+                      variant="outline"
+                      className="w-full neon-border cursor-pointer"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      View Project
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
             </motion.div>
