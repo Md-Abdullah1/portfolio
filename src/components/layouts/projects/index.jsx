@@ -1,3 +1,5 @@
+import { memo, useMemo } from "react";
+import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,9 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
-import { useMemo } from "react";
 
 const Projects = () => {
   const projectsData = useMemo(
@@ -120,4 +120,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default memo(Projects);

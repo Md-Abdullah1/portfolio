@@ -1,3 +1,5 @@
+import { memo, useMemo } from "react";
+import { motion } from "framer-motion";
 import {
   Card,
   CardContent,
@@ -5,8 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { motion } from "framer-motion";
-import { useMemo } from "react";
 
 const Experience = () => {
   const experienceData = useMemo(
@@ -94,4 +94,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default memo(Experience);

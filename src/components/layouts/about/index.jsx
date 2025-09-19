@@ -1,5 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { memo } from "react";
 import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
 import { Clock, Code, Palette, Target, Users, Zap } from "lucide-react";
 
 const About = () => {
@@ -113,4 +114,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default memo(About);

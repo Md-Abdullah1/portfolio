@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { memo, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -87,4 +87,4 @@ const Header = ({ scrollToSection, activeSection }) => {
   );
 };
 
-export default Header;
+export default memo(Header);

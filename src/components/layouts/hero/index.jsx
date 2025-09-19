@@ -1,5 +1,6 @@
-import { Button } from "@/components/ui/button";
+import { memo } from "react";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
 const Hero = ({ scrollToSection }) => {
@@ -81,4 +82,4 @@ const Hero = ({ scrollToSection }) => {
   );
 };
 
-export default Hero;
+export default memo(Hero);
