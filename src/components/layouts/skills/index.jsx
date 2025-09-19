@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { memo, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 
@@ -99,4 +99,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default memo(Skills);

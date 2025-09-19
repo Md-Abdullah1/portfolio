@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { memo, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -17,9 +17,9 @@ const Header = ({ scrollToSection, activeSection }) => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold font-['Orbitron'] text-gradient"
+            className="text-2xl font-bold font-['Orbitron'] text-gradient cursor-pointer"
           >
-            MA
+            <button className="cursor-pointer" onClick={() => scrollToSection("hero")}>MA</button>
           </motion.div>
 
           {/* Desktop Menu */}
@@ -87,4 +87,4 @@ const Header = ({ scrollToSection, activeSection }) => {
   );
 };
 
-export default Header;
+export default memo(Header);
