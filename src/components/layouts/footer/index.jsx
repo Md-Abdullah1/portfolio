@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
 
 const Footer = ({ scrollToSection }) => {
   return (
-    <footer className="py-10 border-t border-border bg-card/30 backdrop-blur-sm">
+    <footer className="py-10 w-full border-t border-border bg-card/30 backdrop-blur-sm">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex flex-col justify-center items-center ">
           <p className="text-muted-foreground text-center md:text-left">

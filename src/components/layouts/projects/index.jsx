@@ -50,7 +50,7 @@ const Projects = () => {
     []
   );
   return (
-    <section id="projects" className="py-20 section-fade-in">
+    <section id="projects" className="py-20 section-fade-in w-full">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

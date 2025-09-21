@@ -7,7 +7,7 @@ const Hero = ({ scrollToSection }) => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center hero-bg relative overflow-hidden"
+      className="min-h-screen w-full flex items-center justify-center hero-bg relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-background/70"></div>
 
@@ -22,7 +22,7 @@ const Hero = ({ scrollToSection }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-6xl md:text-8xl font-bold font-['Orbitron'] mb-6">
+          <h1 className="text-5xl md:text-8xl font-bold font-['Orbitron'] mb-6">
             <span className="text-gradient">Md Abdullah</span>
           </h1>
           <div className="text-2xl md:text-4xl mb-8 h-16">
