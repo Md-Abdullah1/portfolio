@@ -40,15 +40,15 @@ const Home = () => {
     };
   }, []);
   return (
-    <div className="min-h-full  text-foreground font-['Roboto']  w-full bg-amber-500">
+    <div className="min-h-full  text-foreground font-['Roboto']  w-full bg-background">
       {/* Header */}
-      {/* <Header activeSection={activeSection} scrollToSection={scrollToSection} /> */}
+      <Header activeSection={activeSection} scrollToSection={scrollToSection} />
 
       {/* Hero Section */}
-      {/* <Hero scrollToSection={scrollToSection} /> */}
+      <Hero scrollToSection={scrollToSection} />
 
       {/* About Section */}
-      <About /> 
+      <About />
 
       {/* Skills Section */}
       <Skills />

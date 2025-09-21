@@ -13,7 +13,7 @@ const Header = ({ scrollToSection, activeSection }) => {
     <div>
       {" "}
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="container md:mx-auto px-4 py-4 flex justify-between items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
