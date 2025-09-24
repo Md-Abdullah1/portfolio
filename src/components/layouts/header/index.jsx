@@ -9,6 +9,7 @@ const Header = ({ scrollToSection, activeSection }) => {
     () => ["About", "Skills", "Projects", "Experience", "Education", "Contact"],
     []
   );
+
   return (
     <div>
       {" "}
@@ -19,7 +20,12 @@ const Header = ({ scrollToSection, activeSection }) => {
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold font-['Orbitron'] text-gradient cursor-pointer"
           >
-            <button className="cursor-pointer" onClick={() => scrollToSection("hero")}>MA</button>
+            <button
+              className="cursor-pointer"
+              onClick={() => scrollToSection("hero")}
+            >
+              MA
+            </button>
           </motion.div>
 
           {/* Desktop Menu */}
