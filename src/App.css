@@ -119,12 +119,11 @@
   }
 }
 
-
 /* Custom Portfolio Styles */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap");
 
 .hero-bg {
-  background-image: url('./assets/bg-img.png');
+  background-image: url("./assets/bg-img.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -151,8 +150,13 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .typing-animation {
@@ -163,17 +167,30 @@
 }
 
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: #64ffda; }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #64ffda;
+  }
 }
 
 .skill-card {
-  background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, rgba(255, 100, 255, 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(100, 255, 218, 0.1) 0%,
+    rgba(255, 100, 255, 0.1) 100%
+  );
   border: 1px solid rgba(100, 255, 218, 0.2);
   transition: all 0.3s ease;
 }
@@ -203,7 +220,7 @@
 }
 
 .timeline-item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0.5rem;
@@ -215,7 +232,7 @@
 }
 
 .timeline-item::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 5px;
   top: 1.5rem;
@@ -241,8 +258,13 @@
 
 .neon-border {
   border: 2px solid transparent;
-  background: linear-gradient(135deg, rgba(100, 255, 218, 0.1), rgba(255, 100, 255, 0.1)) padding-box,
-              linear-gradient(135deg, #086d55, #023f36) border-box;
+  background: linear-gradient(
+        135deg,
+        rgba(100, 255, 218, 0.1),
+        rgba(255, 100, 255, 0.1)
+      )
+      padding-box,
+    linear-gradient(135deg, #086d55, #023f36) border-box;
 }
 
 .rotating-3d {
@@ -251,11 +273,21 @@
 }
 
 @keyframes rotate3d {
-  0% { transform: rotateX(0deg) rotateY(0deg); }
-  25% { transform: rotateX(90deg) rotateY(0deg); }
-  50% { transform: rotateX(90deg) rotateY(90deg); }
-  75% { transform: rotateX(0deg) rotateY(90deg); }
-  100% { transform: rotateX(0deg) rotateY(0deg); }
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: rotateX(90deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateX(90deg) rotateY(90deg);
+  }
+  75% {
+    transform: rotateX(0deg) rotateY(90deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
 }
 
 .pulse-glow {
@@ -325,7 +357,7 @@
   color: #ccd6f6;
   font-size: 14px;
   font-weight: 500;
-  font-family: 'Roboto', monospace;
+  font-family: "Roboto", monospace;
 }
 
 .code-content {
@@ -334,7 +366,7 @@
 
 .code-text {
   color: #64ffda;
-  font-family: 'Roboto', monospace;
+  font-family: "Roboto", monospace;
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
@@ -344,9 +376,12 @@
 
 /* Syntax highlighting for the code */
 .code-text {
-  background: linear-gradient(135deg, rgba(100, 255, 218, 0.1), rgba(255, 100, 255, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(100, 255, 218, 0.1),
+    rgba(255, 100, 255, 0.1)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-

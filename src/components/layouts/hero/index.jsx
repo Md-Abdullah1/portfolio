@@ -1,9 +1,19 @@
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
+const roles = ["Frontend", "Full Stack", "React"];
 const Hero = ({ scrollToSection }) => {
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % roles.length);
+    }, 4000); // every 4s
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section
       id="hero"
@@ -30,11 +40,23 @@ const Hero = ({ scrollToSection }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 1 }}
-              className="typing-animation font-['Orbitron']"
+              className="typing-animation hidden md:inline-block font-['Orbitron']"
             >
               Frontend Developer | Full Stack Developer | React Developer
             </motion.p>
+
+            {/* Mobile (only animated role + "Developer") */}
+            <motion.p
+              key={index} // re-triggers typing
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 2, ease: "linear" }}
+              className="typing-animation block md:hidden font-['Orbitron']"
+            >
+              {roles[index]} Developer
+            </motion.p>
           </div>
+
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
