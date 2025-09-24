@@ -32,12 +32,8 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToSection = useCallback(() => {
-    (sectionId) => {
-      document
-        .getElementById(sectionId)
-        ?.scrollIntoView({ behavior: "smooth" });
-    };
+  const scrollToSection = useCallback((sectionId) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   }, []);
   return (
     <div className="min-h-full  text-foreground font-['Roboto']  w-full bg-background">
