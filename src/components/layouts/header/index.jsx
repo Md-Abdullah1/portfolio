@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 const Header = ({ scrollToSection, activeSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const desktopNavLinks = useMemo(
+  const navLinks = useMemo(
     () => ["About", "Skills", "Projects", "Experience", "Education", "Contact"],
     []
   );
@@ -30,12 +30,11 @@ const Header = ({ scrollToSection, activeSection }) => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            {desktopNavLinks.map((item) => (
+            {navLinks.map((item) => (
               <button
                 key={item}
                 onClick={() => {
                   scrollToSection(item.toLowerCase());
-                  setIsMenuOpen(false);
                 }}
                 className={`hover:text-primary transition-colors cursor-pointer ${
                   activeSection === item.toLowerCase() ? "text-primary" : ""
@@ -65,21 +64,16 @@ const Header = ({ scrollToSection, activeSection }) => {
               className="md:hidden bg-background/95 backdrop-blur-md border-t border-border"
             >
               <div className="container mx-auto px-4 py-4 space-y-4">
-                {[
-                  "About",
-                  "Skills",
-                  "Projects",
-                  "Experience",
-                  "Education",
-                  "Contact",
-                ]?.map((item) => (
+                {navLinks?.map((item) => (
                   <button
                     key={item}
                     onClick={() => {
                       scrollToSection(item.toLowerCase());
                       setIsMenuOpen(false);
                     }}
-                    className="block w-full text-left hover:text-primary cursor-pointer transition-colors"
+                    className={`block w-full text-left hover:text-primary cursor-pointer transition-colors ${
+                      activeSection === item.toLowerCase() ? "text-primary" : ""
+                    }`}
                   >
                     {item}
                   </button>
