@@ -11,6 +11,7 @@ import Skills from "@/components/layouts/skills";
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState("hero");
+  const [isNavigating, setIsNavigating] = useState(false);
 
   // Scroll animation observer
   useEffect(() => {
@@ -19,7 +20,10 @@ const Home = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-            setActiveSection(entry.target.id);
+            // updating activeSection if not manually navigating
+            if (!isNavigating) {
+              setActiveSection(entry.target.id);
+            }
           }
         });
       },
@@ -30,10 +34,37 @@ const Home = () => {
     sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect();
-  }, []);
+  }, [isNavigating]);
 
   const scrollToSection = useCallback((sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById(sectionId);
+
+    if (element) {
+      setIsNavigating(true);
+      setActiveSection(sectionId);
+
+      const yOffset = -80; // height of your navbar
+      const elementTop = element.getBoundingClientRect().top;
+      const currentScrollY = window.scrollY;
+      const y = elementTop + currentScrollY + yOffset;
+
+      try {
+        setTimeout(() => {
+          if (Math.abs(window.scrollY - y) > 50) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 100);
+      } catch (error) {
+        console.error("Scroll error:", error);
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      setTimeout(() => {
+        setIsNavigating(false);
+      }, 1000);
+    } else {
+      console.error("Element not found for ID:", sectionId);
+    }
   }, []);
   return (
     <div className="min-h-full  text-foreground font-['Roboto']  w-full bg-background">
