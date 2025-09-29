@@ -5,7 +5,6 @@ import { ChevronDown } from "lucide-react";
 
 const roles = ["Frontend", "Full Stack", "React"];
 const Hero = ({ scrollToSection }) => {
-
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -20,11 +19,6 @@ const Hero = ({ scrollToSection }) => {
       className="min-h-screen w-full flex items-center justify-center hero-bg relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-background/70"></div>
-
-      {/* Floating 3D Element
-    <div className="absolute top-20 right-20 w-32 h-32 floating-animation opacity-30">
-      <img src={threeDElement} alt="3D Element" className="w-full h-full rotating-3d" />
-    </div> */}
 
       <div className="container mx-auto px-4 text-center relative z-10">
         <motion.div
@@ -47,7 +41,7 @@ const Hero = ({ scrollToSection }) => {
 
             {/* Mobile (only animated role + "Developer") */}
             <motion.p
-              key={index} // re-triggers typing
+              key={index}
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ duration: 2, ease: "linear" }}
