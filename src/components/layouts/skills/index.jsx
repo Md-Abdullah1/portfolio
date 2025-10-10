@@ -25,6 +25,7 @@ const Skills = () => {
         "Bootstrap",
         "Ant Design",
         "GSAP",
+        "Framer Motion",
         "Api Intergration",
       ],
       backend: [

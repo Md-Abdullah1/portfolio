@@ -14,14 +14,15 @@ import { ExternalLink } from "lucide-react";
 const Projects = () => {
   const projectsData = useMemo(
     () => [
-      {
-        title: "BUILDER SUITE",
-        description:
-          "Driving the Builder Project by developing scalable, reusable components and managing complex state for seamless feature integration. Optimized API interactions, enhancing data flow and user engagement by 40%.",
-        tech: ["React.js", "GSAP", "SCSS", "Lodash"],
-        impact: "40% increase in user engagement",
-        link: "https://www.ve.ai",
-      },
+      // {
+      //   title: "BUILDER SUITE",
+      //   description:
+      //     "Driving the Builder Project by developing scalable, reusable components and managing complex state for seamless feature integration. Optimized API interactions, enhancing data flow and user engagement by 40%.",
+      //   tech: ["React.js", "GSAP", "SCSS", "Lodash"],
+      //   impact: "40% increase in user engagement",
+      //   link: "https://www.ve.ai",
+      // },
+
       {
         title: "TASKIFY",
         description:
@@ -45,6 +46,14 @@ const Projects = () => {
         tech: ["React Native", "API Integration"],
         impact: "30% transaction efficiency boost",
         link: "https://github.com/Md-Abdullah1/appkube-pos-app",
+      },
+      {
+        title: "Cloud Note",
+        description:
+          "A  MERN Application responsible for keeping notes of an individual person in cloud, where a person is able to access it  from anywhere / from any device ,maintain privacy. ",
+        tech: ["React.js", "Axios", "Headless", "heroicons"],
+        impact: "30% boost in Accessiblity and privacy",
+        link: "https://github.com/Md-Abdullah1/CloudNote",
       },
     ],
     []
