@@ -43,18 +43,21 @@ Each section is crafted with attention to detail — from hover effects to subtl
 src/
 │
 ├── assets/ # Static assets like images, icons, and media files
-│ └── images
+│ └── images/
 │
 ├── components/ # Reusable UI and layout components
 │ ├── ui/ # shadcn/ui components
 │ └── layouts/ # Major page sections (Header, About, Projects, Experience, etc.)
 │
-├── pages/ # Page-level components (Home, and in  future: Projects, Experience, etc.)
+├── pages/ # Page-level components (Home, and future: Projects, Experience, etc.)
 │
 ├── lib/ # Utility and helper functions
 │ └── utils.js
 │
 └── App.jsx # Root component
+
+
+
 
 
 
