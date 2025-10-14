@@ -42,10 +42,37 @@ Each section is crafted with attention to detail — from hover effects to subtl
 
 src/
 │
-├── components/ # Reusable UI components
-├── layouts/ # Page sections (About, Projects, Contact, etc.)
-├── assets/ # Images, icons, and static files
-├── hooks/ # Custom React hooks
-├── data/ # Static data like project details
-└── App.jsx # Main entry point
+├── assets/ # Static assets like images, icons, and media files
+│ └── images
+│
+├── components/ # Reusable UI and layout components
+│ ├── ui/ # shadcn/ui components
+│ └── layouts/ # Major page sections (Header, About, Projects, Experience, etc.)
+│
+├── pages/ # Page-level components (Home, and in  future: Projects, Experience, etc.)
+│
+├── lib/ # Utility and helper functions
+│ └── utils.js
+│
+└── App.jsx # Root component
+
+
+
+---
+
+## 🧑‍💻 About Me
+
+I’m **Md Abdullah**, a passionate **Frontend Developer** with 2+ years of experience specializing in building modern, animated, and responsive web applications using React and related libraries.  
+
+💡 I focus on creating intuitive interfaces that balance performance with visual appeal — turning designs into engaging digital experiences.
+
+---
+
+## 🏗️ Setup & Run Locally
+
+```bash
+git clone https://github.com/yourusername/portfolio.git
+cd portfolio
+npm install
+npm run dev
 
