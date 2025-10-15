@@ -40,19 +40,23 @@ Each section is crafted with attention to detail — from hover effects to subtl
 
 ## 📂 Folder Structure
 
+```text
 src/
 │
-├── assets/
-│ └── images/
+├── assets/             # Static assets like images, icons, and media files
+│   └── images/
 │
-├── components/
-│ ├── ui/
-│ └── layouts/
+├── components/         # Reusable UI and layout components
+│   ├── ui/             # shadcn/ui components
+│   └── layouts/        # Major page sections (Header, About, Projects, Experience, etc.)
 │
-├── pages/
-├── lib/
-│ └── utils.js
-└── App.jsx
+├── pages/              # Page-level components (Home, and future: Projects, Experience, etc.)
+│
+├── lib/                # Utility and helper functions
+│   └── utils.js
+│
+└── App.jsx             # Root component
+```
 
 
 ---
