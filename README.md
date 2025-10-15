@@ -57,8 +57,6 @@ src/
 └── App.jsx # Root component
 
 
-
-
 ---
 
 ## 🧑‍💻 About Me
