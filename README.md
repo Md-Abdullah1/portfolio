@@ -1,4 +1,4 @@
-# 🌐 Personal Portfolio — React, Tailwind CSS, Framer Motion, shadcn/ui
+# 🌐 Personal Portfolio 
 
 Welcome to my personal portfolio!  
 This project showcases my skills as a **Frontend Developer** — highlighting my work, design thinking, and interactive web experiences.  
